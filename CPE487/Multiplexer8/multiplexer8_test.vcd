@@ -1,0 +1,37 @@
+$date
+  Tue Sep 19 13:45:56 2023
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module multiplexer8_test $end
+$var reg 8 ! d_input[7:0] $end
+$var reg 3 " sel_input[2:0] $end
+$var reg 1 # y_output $end
+$scope module uut $end
+$var reg 8 $ d[7:0] $end
+$var reg 3 % sel[2:0] $end
+$var reg 1 & y $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+b11111111 !
+b000 "
+1#
+b11111111 $
+b000 %
+1&
+#10000000
+b00001111 !
+b010 "
+b00001111 $
+b010 %
+#20000000

@@ -2,12 +2,12 @@
 library IEEE;
 use IEEE.std_logic_1164.all; -- basic IEEE library
 -- entity
-entity testbench is
+entity quiz1_test is
 	
     
-end testbench; 
+end quiz1_test; 
 -- architecture
-architecture tb of testbench is
+architecture tb of quiz1_test is
 	component quiz1
       port(
           B,C,D : in std_logic;
@@ -18,8 +18,7 @@ architecture tb of testbench is
      signal B,C,D,Y : std_logic;
 begin
 	quiz1tb: quiz1 port map (B => B, C => C, D => D, Y => Y);
-    testing: process is
-    begin
+    process begin
     	B <= 'X';
         C <= 'X';
         D <= 'X';
@@ -27,15 +26,17 @@ begin
         
         
         B <= '0';
-        c <= '0';
+        C <= '0';
         D <= '0';
         wait for 1 ns;
+        report "When B = 0, C = 0, D = 0: Y = " & std_logic'image(Y);
         
-        c <= '1';
+        C <= '1';
         wait for 1 ns;
+        report "When B = 0, C = 1, D = 0: Y = " & std_logic'image(Y);
         
-        assert false;
+        assert false report "End of test";
         wait;
-     end process testing;
+     end process;
         
 end tb;
