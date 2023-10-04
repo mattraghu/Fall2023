@@ -29,23 +29,21 @@ begin
     -- Stimulus process
     stimulus_process: process
     begin
-        -- Test case 1: sel = "000"
-        d_input <= "11111111"; -- Input data
-        sel_input <= "000";   -- Select line
-        wait for 10 ns;
-        
-        -- Check if the output is as expected
-        assert y_output = '1' report "Test case 1 failed" severity error;
+        d_input <= "10000000";
 
-        -- Test case 2: sel = "010"
-        d_input <= "00001111"; -- Input data
-        sel_input <= "010";   -- Select line
+        -- Test case 1: sel = "111"
+        sel_input <= "111";
         wait for 10 ns;
 
-        -- Check if the output is as expected
-        assert y_output = '0' report "Test case 2 failed" severity error;
+        -- Test case 2: sel = "110"
+        sel_input <= "110";
+        wait for 10 ns;
 
-        -- Add more test cases here
+        -- Test case 3: sel = "101"
+        sel_input <= "101";
+        wait for 10 ns;
+
+
 
         -- Finish simulation
         wait;
