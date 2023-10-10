@@ -10,7 +10,7 @@ entity ha is
         a:  in  std_ulogic; -- Input of the unresolved type
         b:  in  std_ulogic; -- https://vhdlwhiz.com/std_logic-vs-std_ulogic/
         s:  out std_ulogic; -- Output sum of a and b
-        c:  out std_ulogic  -- Output carry
+        c:  out std_ulogic  -- Output carry (ex. when A=B=1 then C=1 because A+B=CS and 1+1=10 (2) )
     );
 end ha;
 
