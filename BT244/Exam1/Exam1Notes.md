@@ -2,7 +2,11 @@
 
 ## Economics
 
-Study of how scarce productive resources (land, labor, and capital) are allocated among alternative uses and how the resulting commodities are distributed.
+Study of how scarce productive resources are allocated among alternative uses and how the resulting commodities are distributed.
+
+- **Land** - Natural resources
+- **Labor** - Human resources
+- **Capital** - Tools, equipment, and factories. Human Capital is the knowledge and skills of workers. Entrepreneurship is the ability to organize and manage the other factors of production.
 
 ## Pitfalls to Economic Models
 
