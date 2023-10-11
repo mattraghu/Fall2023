@@ -256,6 +256,11 @@ $$
 P_S = \frac{1}{2}(8-5)(6) = 9 \\
 $$
 
+**Dead Weight Loss**: The area between the supply and demand curves that comes after the price ceiling Q on the supply curve.
+
+**Producer Surplus**: The area between the supply curve and the price ceiling Q.
+
+**Consumer Surplus**: The area between the demand curve and the price ceiling Q.
 ## Elasticity
 
 **Elasticity** - A measure of the responsiveness of one variable to changes in another variable.
@@ -268,7 +273,7 @@ $$
 We will focus on Price Elasticity of Demand.
 
 $$
-\epsilon = \frac{\%\Delta Q}{\%\Delta P} \\
+\epsilon = \frac{\%\Delta Q}{\%\Delta P} = \frac{\Delta Q/Q_{avg}}{\Delta P/P_{avg}} \\
 $$
 
 - If $\epsilon > 1$ then demand is elastic.
