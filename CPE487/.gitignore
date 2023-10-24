@@ -1,2 +1,7 @@
-# Ignore hex count directory
-/hexcount/
+hexcount/*
+!hexcount/*srcs*/
+!hexcount/*.xpr
+
+leddec/*
+!leddec/*srcs*/
+!leddec/*.xpr
