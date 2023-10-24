@@ -1,7 +1,9 @@
 hexcount/*
 !hexcount/*srcs*/
 !hexcount/*.xpr
+!hexcount/*.md
 
 leddec/*
 !leddec/*srcs*/
 !leddec/*.xpr
+!leddec/*.md
