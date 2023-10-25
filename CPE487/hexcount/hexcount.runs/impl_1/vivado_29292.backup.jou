@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Tue Oct 24 13:19:01 2023
+# Process ID: 29292
+# Current directory: C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/hexcount/hexcount.runs/impl_1
+# Command line: vivado.exe -log hexcount.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source hexcount.tcl -notrace
+# Log file: C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/hexcount/hexcount.runs/impl_1/hexcount.vdi
+# Journal file: C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/hexcount/hexcount.runs/impl_1\vivado.jou
+# Running On: DESKTOP-6DEOV28, OS: Windows, CPU Frequency: 2995 MHz, CPU Physical cores: 24, Host memory: 34159 MB
+#-----------------------------------------------------------
+source hexcount.tcl -notrace
