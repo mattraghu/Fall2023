@@ -7,9 +7,8 @@ use IEEE.numeric_std.all; -- Include numeric_std for to_unsigned function
 entity fsm is
     port (
         X, CLK, RESET: in std_logic;
-        Y : out std_logic_vector(1 downto 0);
         Z : out std_logic;
-        STATE : out std_logic_vector(2 downto 0) -- For simulation only 
+        -- STATE : out std_logic_vector(2 downto 0) -- For simulation only 
     );
 end fsm;
 
@@ -21,7 +20,7 @@ architecture fsmMoore11100 of fsm is
     signal PS, NS : state_type;
 begin 
     -- Clock and Reset Process
-    clockAndReset: process(CLK, RESET)
+    clockAndReset: process(CLK, RESET) -- Will only run when CLK or RESET changes (sensitivity list)
     begin
         -- Initialize the present state (PS) to A when RESET is asserted
         if (RESET = '1') then
@@ -31,21 +30,21 @@ begin
             PS <= NS;
         end if;
 
-        -- Set the STATE output port based on the current state (PS)
-        case PS is
-            when A =>
-                STATE <= "000";
-            when B =>
-                STATE <= "001";
-            when C =>
-                STATE <= "010";
-            when D =>
-                STATE <= "011";
-            when E =>
-                STATE <= "100";
-            when F =>
-                STATE <= "101";
-        end case;
+        -- -- Set the STATE output port based on the current state (PS)
+        -- case PS is
+        --     when A =>
+        --         STATE <= "000";
+        --     when B =>
+        --         STATE <= "001";
+        --     when C =>
+        --         STATE <= "010";
+        --     when D =>
+        --         STATE <= "011";
+        --     when E =>
+        --         STATE <= "100";
+        --     when F =>
+        --         STATE <= "101";
+        -- end case;
 
 
     end process clockAndReset;
