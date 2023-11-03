@@ -2,7 +2,7 @@
 
 ### By Ryan Potenza, Robert Plastina, and Matthew Raghunandan
 
-![Successful Upload](images/successful_upload.png)
+![Successful Upload](Media/successful_upload.png)
 
 ## Part 1 - Leddec
 
