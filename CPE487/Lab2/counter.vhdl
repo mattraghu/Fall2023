@@ -25,7 +25,7 @@ ARCHITECTURE Behavioral OF counter IS
     SIGNAL Z_from_fsm : std_logic; -- Monitors the output of the FSM '1' will reverse the counter
     SIGNAL reverse_clock : std_logic := '0'; -- will be used to reverse the clock
 BEGIN
-    X_from_cnt <= cnt(5); -- get the LSB from cnt
+    X_from_cnt <= cnt(5); -- getx bit 
 
     fsm_0 : fsm PORT MAP (X_from_cnt, reverse_clock, '0', Z_from_fsm); -- FSM to reverse the clock
 
@@ -39,6 +39,7 @@ BEGIN
         END IF;
     END PROCESS;
 
+    PROCESS (clk)
 	BEGIN
 		IF clk'EVENT AND clk = '1' THEN -- on rising edge of clock
             IF reverse_clock = '0' THEN -- if the clock is not reversed

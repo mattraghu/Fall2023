@@ -7,7 +7,7 @@ use IEEE.numeric_std.all; -- Include numeric_std for to_unsigned function
 entity fsm is
     port (
         X, CLK, RESET: in std_logic;
-        Z : out std_logic;
+        Z : out std_logic
         -- STATE : out std_logic_vector(2 downto 0) -- For simulation only 
     );
 end fsm;
@@ -25,7 +25,7 @@ begin
         -- Initialize the present state (PS) to A when RESET is asserted
         if (RESET = '1') then
             PS <= A;
-        elsif (rising_edge(CLK)) then
+        elsif (clk'EVENT AND clk = '1') then
             -- Update the present state (PS) on a rising clock edge
             PS <= NS;
         end if;
