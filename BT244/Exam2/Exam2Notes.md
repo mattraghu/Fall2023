@@ -358,4 +358,4 @@ $$
 - **Expected Value** - The weighted average of the possible outcomes of a risky situation, where the weights are the probabilities of each outcome occurring.
   - $E = \sum_{i=1}^n P_iX_i$
   - Where $P_i$ is the probability of outcome $i$ and $X_i$ is the value of outcome $i$.
-- The Health Care Industry in the US is vastly overallocatedA
+- The Health Care Industry in the US is vastly overallocated
