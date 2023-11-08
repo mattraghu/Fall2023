@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" width="884" height="634" viewBox="0 0 884 634"
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xml:space="preserve"
+	xml:lang="en">
+<title>Diminishing returns graph</title>
+<style type="text/css">
+	circle{
+		fill: currentColor;
+	}
+	line, path{
+		fill: none;
+		stroke: currentColor;
+		stroke-width: 2.5;
+	}
+	text{
+		fill: currentColor;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 24px;
+		text-anchor: end;
+	}
+	.axis   { stroke-linecap: square; }
+	.left   { text-anchor: start; }
+	.centre { text-anchor: middle; }
+	.blue   { color: #0070C0; }
+	.red    { color: #f00; }
+	.value  { stroke-width: 3.5; stroke-linecap: round; }
+</style>
+<line class="y axis" x1="51" y1="571" x2="51" y2="20"/>
+<line class="x axis" x1="51" y1="571" x2="851" y2="571"/>
+<path class="red value" d="
+	M 51 571
+	c 135.5 -263 219.4 -420 341 -420
+	c 57.2 0 108.5 21.8 212 89.5
+"/>
+<line class="blue" x1="51"  y1="150.5" x2="392" y2="150.5" stroke-dasharray="7"/>
+<line class="blue" x1="392" y1="571.5" x2="392" y2="150.5" stroke-dasharray="7"/>
+<circle class="blue" cx="392" cy="151" r="7"/>
+<line x1="287" y1="193" x2="287" y2="632" stroke-dasharray="8, 6"/>
+<line x1="485" y1="174" x2="485" y2="633" stroke-dasharray="8, 6"/>
+<text transform="translate(32 22) rotate(-90)">Output</text>
+<text x="851" y="597">Input</text>
+<text x="37"  y="592">0</text>
+<text x="279" y="607">Increasing returns</text>
+<text x="392" y="599" class="centre">Diminishing<tspan x="392" y="624">returns</tspan></text>
+<text x="492" y="607" class="left">Negative returns</text>
+<text x="449" y="139" class="blue centre">Point of Maximum Yield</text>
+</svg>
