@@ -20,34 +20,9 @@ BEGIN
 
     data4(0) <= '0'; -- Whether or not to display the data or not 
 
-	process(data) begin
-		-- Remove trailing zeros 
-		if (data(15 DOWNTO 12) = "0000") then
-			data4(0) <= '1';
-		else
-			data4(0) <= '0';
-		end if;
-
-		if (data(15 DOWNTO 8) = "00000000") then
-			data4(0) <= '1';
-		else
-			data4(0) <= '0';
-		end if;
-
-		if (data(15 DOWNTO 4) = "000000000000") then
-			data4(0) <= '1';
-		else
-			data4(0) <= '0';
-		end if;
-
-		if (data(15 DOWNTO 0) = "0000000000000000") then
-			data4(0) <= '1';
-		else
-			data4(0) <= '0';
-		end if;
-	end process;
-
-    
+	data4(0) <= '1' WHEN data(15 DOWNTO 12) = "0000" 
+	data4(0) <= '1' WHEN data(15 DOWNTO 8) = "00000000"
+	data4(0) <= '1' WHEN data(15 DOWNTO 4) = "000000000000"
 
 	-- Turn on segments corresponding to 4-bit data word
 	seg <= "0000001" WHEN data4 = "00000" ELSE -- 0
