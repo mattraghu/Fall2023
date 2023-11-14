@@ -11,6 +11,8 @@ ENTITY hexcalc IS
 		bt_plus : IN STD_LOGIC; -- calculator "+" button
 		bt_eq : IN STD_LOGIC; -- calculator "=" button
 		KB_col : OUT STD_LOGIC_VECTOR (4 DOWNTO 1); -- keypad column pins
+
+		bt_sub : IN STD_LOGIC; -- calculator "-" button
 	KB_row : IN STD_LOGIC_VECTOR (4 DOWNTO 1)); -- keypad row pins
 END hexcalc;
 
@@ -42,6 +44,10 @@ ARCHITECTURE Behavioral OF hexcalc IS
 	TYPE state IS (ENTER_ACC, ACC_RELEASE, START_OP, OP_RELEASE, 
 	ENTER_OP, SHOW_RESULT); -- state machine states
 	SIGNAL pr_state, nx_state : state; -- present and next states
+
+	--Type of Operation
+	TYPE operation IS (ADD, SUB);
+	SIGNAL op : operation;
 BEGIN
 	ck_proc : PROCESS (clk_50MHz)
 	BEGIN
@@ -76,7 +82,7 @@ BEGIN
 		END PROCESS;
 		-- state maching combinatorial process
 		-- determines output of state machine and next state
-		sm_comb_pr : PROCESS (kp_hit, kp_value, bt_plus, bt_eq, acc, operand, pr_state)
+		sm_comb_pr : PROCESS (kp_hit, kp_value, bt_plus, bt_sub, bt_eq, acc, operand, pr_state)
 		BEGIN
 			nx_acc <= acc; -- default values of nx_acc, nx_operand & display
 			nx_operand <= operand;
@@ -88,8 +94,11 @@ BEGIN
 						nx_state <= ACC_RELEASE;
 					ELSIF bt_plus = '1' THEN
 						nx_state <= START_OP;
-					ELSE
-						nx_state <= ENTER_ACC;
+						op <= ADD;
+					ELSIF bt_sub = '1' THEN
+						nx_state <= START_OP;
+						op <= SUB;
+					ELSE nx_state <= ENTER_ACC;
 					END IF;
 				WHEN ACC_RELEASE => -- waiting for button to be released
 					IF kp_hit = '0' THEN
@@ -112,7 +121,12 @@ BEGIN
 				WHEN ENTER_OP => -- waiting for next digit in 2nd operand
 					display <= operand;
 					IF bt_eq = '1' THEN
-						nx_acc <= acc + operand;
+						IF op = ADD THEN
+							nx_acc <= acc + operand;
+						ELSIF op = SUB THEN
+							nx_acc <= acc - operand;
+						END IF;
+
 						nx_state <= SHOW_RESULT;
 					ELSIF kp_hit = '1' THEN
 						nx_operand <= operand(11 DOWNTO 0) & kp_value;
