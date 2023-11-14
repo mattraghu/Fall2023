@@ -13,7 +13,8 @@ ENTITY hexcalc IS
 		KB_col : OUT STD_LOGIC_VECTOR (4 DOWNTO 1); -- keypad column pins
 
 		bt_sub : IN STD_LOGIC; -- calculator "-" button
-	KB_row : IN STD_LOGIC_VECTOR (4 DOWNTO 1)); -- keypad row pins
+		KB_row : IN STD_LOGIC_VECTOR (4 DOWNTO 1)
+		); -- keypad row pins
 END hexcalc;
 
 ARCHITECTURE Behavioral OF hexcalc IS
