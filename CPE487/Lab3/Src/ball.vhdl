@@ -41,7 +41,7 @@ BEGIN
 
 
 		-- Change to circle
-		IF (pixel_col - ball_x) * (pixel_col - ball_x) + (pixel_row - ball_y) * (pixel_row - ball_y) <= size * size THEN
+		IF (CONV_INTEGER(pixel_col) - CONV_INTEGER(ball_x)) * (CONV_INTEGER(pixel_col) - CONV_INTEGER(ball_x)) + (CONV_INTEGER(pixel_row) - CONV_INTEGER(ball_y)) * (CONV_INTEGER(pixel_row) - CONV_INTEGER(ball_y)) <= size * size THEN
 			ball_on <= '1';
 		ELSE
 			ball_on <= '0';
