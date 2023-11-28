@@ -10,7 +10,7 @@ ENTITY siren IS
 		dac_SCLK : OUT STD_LOGIC;
 		dac_SDIN : OUT STD_LOGIC;
 
-		bt_change_shape : IN STD_LOGIC -- button to change shape of siren
+		bt_change_shape : IN STD_LOGIC; -- button to change shape of siren
 
 		--Wail Speed Switches
 		SW_SPD : IN STD_LOGIC_VECTOR (7 DOWNTO 0) -- switches to change wail speed
@@ -20,7 +20,9 @@ END siren;
 ARCHITECTURE Behavioral OF siren IS
 	CONSTANT lo_tone : UNSIGNED (13 DOWNTO 0) := to_unsigned (344, 14); -- lower limit of siren = 256 Hz
 	CONSTANT hi_tone : UNSIGNED (13 DOWNTO 0) := to_unsigned (687, 14); -- upper limit of siren = 512 Hz
-	CONSTANT wail_speed : UNSIGNED (7 DOWNTO 0) := to_unsigned (8, 8); -- sets wailing speed
+	-- CONSTANT wail_speed : UNSIGNED (7 DOWNTO 0) := to_unsigned (8, 8); -- sets wailing speed
+	SIGNAL wail_speed : UNSIGNED (7 DOWNTO 0) := (OTHERS => '0'); -- Initialize with default value
+
 	COMPONENT dac_if IS
 		PORT (
 			SCLK : IN STD_LOGIC;
