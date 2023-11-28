@@ -8,9 +8,12 @@ ENTITY siren IS
 		dac_MCLK : OUT STD_LOGIC; -- outputs to PMODI2L DAC
 		dac_LRCK : OUT STD_LOGIC;
 		dac_SCLK : OUT STD_LOGIC;
-		dac_SDIN : OUT STD_LOGIC
+		dac_SDIN : OUT STD_LOGIC;
 
-		bt_change_shape : IN STD_LOGIC; -- button to change shape of siren
+		bt_change_shape : IN STD_LOGIC -- button to change shape of siren
+
+		--Wail Speed Switches
+		SW_SPD : IN STD_LOGIC_VECTOR (7 DOWNTO 0) -- switches to change wail speed
 	);
 END siren;
 
@@ -35,7 +38,7 @@ ARCHITECTURE Behavioral OF siren IS
 			wspeed : IN UNSIGNED (7 DOWNTO 0);
 			wclk : IN STD_LOGIC;
 			audio_clk : IN STD_LOGIC;
-			audio_data : OUT SIGNED (15 DOWNTO 0)
+			audio_data : OUT SIGNED (15 DOWNTO 0);
 			audio_data_square : OUT SIGNED (15 DOWNTO 0)
 		);
 	END COMPONENT;
@@ -78,6 +81,9 @@ BEGIN
 		R_data => data_R, 
 		SDATA => dac_SDIN 
 	);
+
+	--Change Wail Speed With Switches
+	wail_speed <= SW_SPD;
 
 	w1 : wail
 	PORT MAP(
