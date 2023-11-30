@@ -137,6 +137,7 @@ BEGIN
 		ELSE
 			data_R <= data_tri_R;
 		END IF;
+	END PROCESS;
 
 	-- data_R <= data_L; -- duplicate data on right channel
 END Behavioral;
