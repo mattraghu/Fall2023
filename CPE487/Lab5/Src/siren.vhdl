@@ -45,9 +45,18 @@ ARCHITECTURE Behavioral OF siren IS
 			audio_clk : IN STD_LOGIC;
 			audio_data : OUT SIGNED (15 DOWNTO 0);
 			audio_data_square : OUT SIGNED (15 DOWNTO 0);
+		);
+	END COMPONENT;
 
-			audio_data_R : OUT SIGNED (15 DOWNTO 0);
-			audio_data_square_R : OUT SIGNED (15 DOWNTO 0)
+	COMPONENT wail_R IS
+		PORT (
+			lo_pitch : IN UNSIGNED (13 DOWNTO 0);
+			hi_pitch : IN UNSIGNED (13 DOWNTO 0);
+			wspeed : IN UNSIGNED (7 DOWNTO 0);
+			wclk : IN STD_LOGIC;
+			audio_clk : IN STD_LOGIC;
+			audio_data : OUT SIGNED (15 DOWNTO 0);
+			audio_data_square : OUT SIGNED (15 DOWNTO 0);
 		);
 	END COMPONENT;
 	SIGNAL tcount : unsigned (19 DOWNTO 0) := (OTHERS => '0'); -- timing counter
@@ -108,7 +117,7 @@ BEGIN
 	);
 
 
-	w2 : wail
+	w2 : wail_R
 	PORT MAP(
 		lo_pitch => lo_tone, -- instantiate wailing siren
 		hi_pitch => hi_tone, 
