@@ -11,9 +11,11 @@ ENTITY siren IS
 		dac_SDIN : OUT STD_LOGIC;
 
 		bt_change_shape : IN STD_LOGIC; -- button to change shape of siren
+		bt_change_shape_R : IN STD_LOGIC; -- button to change shape of siren
 
 		--Wail Speed Switches
-		SW_SPD : IN STD_LOGIC_VECTOR (7 DOWNTO 0) -- switches to change wail speed
+		SW_SPD : IN UNSIGNED (7 DOWNTO 0) -- switches to change wail speed
+		SW_SPD_R : IN UNSIGNED (7 DOWNTO 0) -- switches to change wail speed
 	);
 END siren;
 
@@ -22,6 +24,7 @@ ARCHITECTURE Behavioral OF siren IS
 	CONSTANT hi_tone : UNSIGNED (13 DOWNTO 0) := to_unsigned (687, 14); -- upper limit of siren = 512 Hz
 	-- CONSTANT wail_speed : UNSIGNED (7 DOWNTO 0) := to_unsigned (8, 8); -- sets wailing speed
 	SIGNAL wail_speed : UNSIGNED (7 DOWNTO 0) := (OTHERS => '0'); -- Initialize with default value
+	SIGNAL wail_speed_R : UNSIGNED (7 DOWNTO 0) := (OTHERS => '0'); -- Initialize with default value
 
 	COMPONENT dac_if IS
 		PORT (
@@ -42,6 +45,9 @@ ARCHITECTURE Behavioral OF siren IS
 			audio_clk : IN STD_LOGIC;
 			audio_data : OUT SIGNED (15 DOWNTO 0);
 			audio_data_square : OUT SIGNED (15 DOWNTO 0)
+
+			audio_data_R : OUT SIGNED (15 DOWNTO 0);
+			audio_data_square_R : OUT SIGNED (15 DOWNTO 0)
 		);
 	END COMPONENT;
 	SIGNAL tcount : unsigned (19 DOWNTO 0) := (OTHERS => '0'); -- timing counter
@@ -86,6 +92,8 @@ BEGIN
 
 	--Change Wail Speed With Switches
 	wail_speed <= SW_SPD;
+	wail_speed_R <= SW_SPD_R;
+
 
 	w1 : wail
 	PORT MAP(
@@ -96,6 +104,18 @@ BEGIN
 		audio_clk => audio_clk, 
 		audio_data => data_tri,
 		audio_data_square => data_square
+	);
+
+
+	w2 : wail
+	PORT MAP(
+		lo_pitch => lo_tone, -- instantiate wailing siren
+		hi_pitch => hi_tone, 
+		wspeed => wail_speed_R,
+		wclk => slo_clk, 
+		audio_clk => audio_clk, 
+		audio_data_R => data_tri,
+		audio_data_square_R => data_square
 	);
 	
 	-- this process selects between triangle and square waveforms
@@ -108,6 +128,15 @@ BEGIN
 		END IF;
 	END PROCESS;
 
+	-- this process selects between triangle and square waveforms for the right
+	select_pr_R : PROCESS (bt_change_shape_R)
+	BEGIN
+		IF bt_change_shape_R = '1' THEN
+			data_R <= data_square_R;
+		ELSE
+			data_R <= data_tri_R;
+		END IF;
+	END PROCESS;
 
-	data_R <= data_L; -- duplicate data on right channel
+	-- data_R <= data_L; -- duplicate data on right channel
 END Behavioral;
