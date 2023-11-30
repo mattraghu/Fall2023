@@ -14,7 +14,7 @@ ENTITY siren IS
 		bt_change_shape_R : IN STD_LOGIC; -- button to change shape of siren
 
 		--Wail Speed Switches
-		SW_SPD : IN UNSIGNED (7 DOWNTO 0) -- switches to change wail speed
+		SW_SPD : IN UNSIGNED (7 DOWNTO 0); -- switches to change wail speed
 		SW_SPD_R : IN UNSIGNED (7 DOWNTO 0) -- switches to change wail speed
 	);
 END siren;
@@ -44,7 +44,7 @@ ARCHITECTURE Behavioral OF siren IS
 			wclk : IN STD_LOGIC;
 			audio_clk : IN STD_LOGIC;
 			audio_data : OUT SIGNED (15 DOWNTO 0);
-			audio_data_square : OUT SIGNED (15 DOWNTO 0)
+			audio_data_square : OUT SIGNED (15 DOWNTO 0);
 
 			audio_data_R : OUT SIGNED (15 DOWNTO 0);
 			audio_data_square_R : OUT SIGNED (15 DOWNTO 0)
@@ -52,6 +52,7 @@ ARCHITECTURE Behavioral OF siren IS
 	END COMPONENT;
 	SIGNAL tcount : unsigned (19 DOWNTO 0) := (OTHERS => '0'); -- timing counter
 	SIGNAL data_tri, data_square : SIGNED (15 DOWNTO 0); -- 16-bit signed audio data
+	SIGNAL data_tri_R, data_square_R : SIGNED (15 DOWNTO 0); -- 16-bit signed audio data
 	SIGNAL data_L, data_R : SIGNED (15 DOWNTO 0); -- 16-bit signed audio data
 	SIGNAL dac_load_L, dac_load_R : STD_LOGIC; -- timing pulses to load DAC shift reg.
 	SIGNAL slo_clk, sclk, audio_CLK : STD_LOGIC;
@@ -111,11 +112,11 @@ BEGIN
 	PORT MAP(
 		lo_pitch => lo_tone, -- instantiate wailing siren
 		hi_pitch => hi_tone, 
-		wspeed => wail_speed_R,
+		wspeed => wail_speed_R, 
 		wclk => slo_clk, 
 		audio_clk => audio_clk, 
-		audio_data_R => data_tri,
-		audio_data_square_R => data_square
+		audio_data => data_tri_R,
+		audio_data_square => data_square_R
 	);
 	
 	-- this process selects between triangle and square waveforms
@@ -136,7 +137,6 @@ BEGIN
 		ELSE
 			data_R <= data_tri_R;
 		END IF;
-	END PROCESS;
 
 	-- data_R <= data_L; -- duplicate data on right channel
 END Behavioral;
