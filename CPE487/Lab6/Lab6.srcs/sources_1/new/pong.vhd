@@ -15,7 +15,8 @@ ENTITY pong IS
         ADC_SCLK : OUT STD_LOGIC;
         ADC_SDATA1 : IN STD_LOGIC;
         ADC_SDATA2 : IN STD_LOGIC;
-        btn0 : IN STD_LOGIC); -- button to initiate serve
+        btn0 : IN STD_LOGIC
+    ); 
 END pong;
 
 ARCHITECTURE Behavioral OF pong IS

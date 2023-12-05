@@ -3,8 +3,8 @@
 # SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Tue Dec  5 11:50:16 2023
-# Process ID: 40792
+# Start of session at: Tue Dec  5 12:54:05 2023
+# Process ID: 25464
 # Current directory: C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.runs/synth_1
 # Command line: vivado.exe -log pong.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source pong.tcl
 # Log file: C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.runs/synth_1/pong.vds
@@ -12,32 +12,38 @@
 # Running On: DESKTOP-6DEOV28, OS: Windows, CPU Frequency: 2995 MHz, CPU Physical cores: 24, Host memory: 34159 MB
 #-----------------------------------------------------------
 source pong.tcl -notrace
+Command: read_checkpoint -auto_incremental -incremental C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/utils_1/imports/synth_1/pong.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/utils_1/imports/synth_1/pong.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
 Command: synth_design -top pong -part xc7a100tcsg324-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 40932
+INFO: [Synth 8-7075] Helper process launched with PID 19176
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1336.809 ; gain = 439.922
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1339.930 ; gain = 440.277
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-9112] actual for formal port 'red_in' is neither a static name nor a globally static expression [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/sources_1/new/pong.vhd:112]
-WARNING: [Synth 8-9112] actual for formal port 'green_in' is neither a static name nor a globally static expression [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/sources_1/new/pong.vhd:113]
-WARNING: [Synth 8-9112] actual for formal port 'blue_in' is neither a static name nor a globally static expression [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/sources_1/new/pong.vhd:114]
-INFO: [Synth 8-638] synthesizing module 'pong' [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/sources_1/new/pong.vhd:21]
-INFO: [Synth 8-3491] module 'adc_if' declared at 'C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/sources_1/new/adc_if.vhd:5' bound to instance 'adc' of component 'adc_if' [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/sources_1/new/pong.vhd:89]
+WARNING: [Synth 8-9112] actual for formal port 'red_in' is neither a static name nor a globally static expression [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/sources_1/new/pong.vhd:113]
+WARNING: [Synth 8-9112] actual for formal port 'green_in' is neither a static name nor a globally static expression [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/sources_1/new/pong.vhd:114]
+WARNING: [Synth 8-9112] actual for formal port 'blue_in' is neither a static name nor a globally static expression [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/sources_1/new/pong.vhd:115]
+INFO: [Synth 8-638] synthesizing module 'pong' [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/sources_1/new/pong.vhd:22]
+INFO: [Synth 8-3491] module 'adc_if' declared at 'C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/sources_1/new/adc_if.vhd:5' bound to instance 'adc' of component 'adc_if' [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/sources_1/new/pong.vhd:90]
 INFO: [Synth 8-638] synthesizing module 'adc_if' [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/sources_1/new/adc_if.vhd:15]
 INFO: [Synth 8-256] done synthesizing module 'adc_if' (0#1) [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/sources_1/new/adc_if.vhd:15]
-INFO: [Synth 8-3491] module 'bat_n_ball' declared at 'C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/sources_1/new/bat_n_ball.vhd:6' bound to instance 'add_bb' of component 'bat_n_ball' [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/sources_1/new/pong.vhd:98]
-INFO: [Synth 8-638] synthesizing module 'bat_n_ball' [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/sources_1/new/bat_n_ball.vhd:19]
-WARNING: [Synth 8-614] signal 'game_on' is read in the process but is not in the sensitivity list [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/sources_1/new/bat_n_ball.vhd:41]
-INFO: [Synth 8-256] done synthesizing module 'bat_n_ball' (0#1) [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/sources_1/new/bat_n_ball.vhd:19]
-INFO: [Synth 8-3491] module 'vga_sync' declared at 'C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/sources_1/new/vga_sync.vhd:5' bound to instance 'vga_driver' of component 'vga_sync' [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/sources_1/new/pong.vhd:109]
+WARNING: [Synth 8-5640] Port 'sw_spd' is missing in component declaration [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/sources_1/new/pong.vhd:42]
+INFO: [Synth 8-3491] module 'bat_n_ball' declared at 'C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/sources_1/new/bat_n_ball.vhd:6' bound to instance 'add_bb' of component 'bat_n_ball' [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/sources_1/new/pong.vhd:99]
+INFO: [Synth 8-638] synthesizing module 'bat_n_ball' [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/sources_1/new/bat_n_ball.vhd:20]
+WARNING: [Synth 8-614] signal 'game_on' is read in the process but is not in the sensitivity list [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/sources_1/new/bat_n_ball.vhd:46]
+INFO: [Synth 8-256] done synthesizing module 'bat_n_ball' (0#1) [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/sources_1/new/bat_n_ball.vhd:20]
+INFO: [Synth 8-3491] module 'vga_sync' declared at 'C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/sources_1/new/vga_sync.vhd:5' bound to instance 'vga_driver' of component 'vga_sync' [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/sources_1/new/pong.vhd:110]
 INFO: [Synth 8-638] synthesizing module 'vga_sync' [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/sources_1/new/vga_sync.vhd:21]
 INFO: [Synth 8-256] done synthesizing module 'vga_sync' (0#1) [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/sources_1/new/vga_sync.vhd:21]
-INFO: [Synth 8-3491] module 'clk_wiz_0' declared at 'C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/sources_1/new/clk_wiz_0.vhd:74' bound to instance 'clk_wiz_0_inst' of component 'clk_wiz_0' [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/sources_1/new/pong.vhd:125]
+INFO: [Synth 8-3491] module 'clk_wiz_0' declared at 'C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/sources_1/new/clk_wiz_0.vhd:74' bound to instance 'clk_wiz_0_inst' of component 'clk_wiz_0' [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/sources_1/new/pong.vhd:126]
 INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/sources_1/new/clk_wiz_0.vhd:83]
 INFO: [Synth 8-3491] module 'clk_wiz_0_clk_wiz' declared at 'C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/sources_1/new/clk_wiz_0_clk_wiz.vhd:63' bound to instance 'U0' of component 'clk_wiz_0_clk_wiz' [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/sources_1/new/clk_wiz_0.vhd:98]
 INFO: [Synth 8-638] synthesizing module 'clk_wiz_0_clk_wiz' [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/sources_1/new/clk_wiz_0_clk_wiz.vhd:72]
@@ -60,20 +66,20 @@ INFO: [Synth 8-113] binding component instance 'clkf_buf' to cell 'BUFG' [C:/Use
 INFO: [Synth 8-113] binding component instance 'clkout1_buf' to cell 'BUFG' [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/sources_1/new/clk_wiz_0_clk_wiz.vhd:183]
 INFO: [Synth 8-256] done synthesizing module 'clk_wiz_0_clk_wiz' (0#1) [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/sources_1/new/clk_wiz_0_clk_wiz.vhd:72]
 INFO: [Synth 8-256] done synthesizing module 'clk_wiz_0' (0#1) [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/sources_1/new/clk_wiz_0.vhd:83]
-INFO: [Synth 8-256] done synthesizing module 'pong' (0#1) [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/sources_1/new/pong.vhd:21]
+INFO: [Synth 8-256] done synthesizing module 'pong' (0#1) [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/sources_1/new/pong.vhd:22]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1445.617 ; gain = 548.730
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1449.477 ; gain = 549.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1445.617 ; gain = 548.730
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1449.477 ; gain = 549.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1445.617 ; gain = 548.730
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1449.477 ; gain = 549.824
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1445.617 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1449.477 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -81,35 +87,55 @@ INFO: [Project 1-570] Preparing netlist for logic optimization
 Processing XDC Constraints
 Initializing timing engine
 Parsing XDC File [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/constrs_1/new/pong.xdc]
+WARNING: [Vivado 12-584] No ports matched 'SW_SPD[0]'. [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/constrs_1/new/pong.xdc:29]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/constrs_1/new/pong.xdc:29]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW_SPD[1]'. [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/constrs_1/new/pong.xdc:30]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/constrs_1/new/pong.xdc:30]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW_SPD[2]'. [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/constrs_1/new/pong.xdc:31]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/constrs_1/new/pong.xdc:31]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW_SPD[3]'. [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/constrs_1/new/pong.xdc:32]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/constrs_1/new/pong.xdc:32]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW_SPD[4]'. [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/constrs_1/new/pong.xdc:33]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/constrs_1/new/pong.xdc:33]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW_SPD[5]'. [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/constrs_1/new/pong.xdc:34]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/constrs_1/new/pong.xdc:34]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 Finished Parsing XDC File [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/constrs_1/new/pong.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.srcs/constrs_1/new/pong.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/pong_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/pong_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 INFO: [Timing 38-2] Deriving generated clocks
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1542.438 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1547.219 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1542.438 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1547.219 ; gain = 0.000
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1542.438 ; gain = 645.551
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1547.219 ; gain = 647.566
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1542.438 ; gain = 645.551
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1547.219 ; gain = 647.566
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1542.438 ; gain = 645.551
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1547.219 ; gain = 647.566
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1542.438 ; gain = 645.551
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1547.219 ; gain = 647.566
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -117,7 +143,7 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input   12 Bit       Adders := 2     
-	   2 Input   11 Bit       Adders := 10    
+	   2 Input   11 Bit       Adders := 11    
 	   3 Input   11 Bit       Adders := 2     
 	   2 Input   10 Bit       Adders := 2     
 +---Registers : 
@@ -127,11 +153,10 @@ Detailed RTL Component Info :
 	                4 Bit    Registers := 3     
 	                1 Bit    Registers := 3     
 +---Muxes : 
-	   2 Input   11 Bit        Muxes := 6     
-	   5 Input   11 Bit        Muxes := 1     
-	   3 Input   11 Bit        Muxes := 2     
+	   2 Input   11 Bit        Muxes := 8     
+	   3 Input   11 Bit        Muxes := 1     
 	   2 Input    4 Bit        Muxes := 3     
-	   2 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 4     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -155,7 +180,7 @@ DSP Report: operator add_bb/plusOp is absorbed into DSP add_bb/plusOp.
 DSP Report: operator add_bb/multOp is absorbed into DSP add_bb/plusOp.
 WARNING: [Synth 8-7129] Port ADC_SDATA1 in module pong is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1542.438 ; gain = 645.551
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1547.219 ; gain = 647.566
 ---------------------------------------------------------------------------------
  Sort Area is  add_bb/multOp_0 : 0 0 : 863 1791 : Used 1 time 0
  Sort Area is  add_bb/multOp_0 : 0 1 : 928 1791 : Used 1 time 0
@@ -179,19 +204,19 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1542.438 ; gain = 645.551
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1547.219 ; gain = 647.566
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1542.438 ; gain = 645.551
+Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1547.219 ; gain = 647.566
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1542.438 ; gain = 645.551
+Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1547.219 ; gain = 647.566
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -209,37 +234,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1542.438 ; gain = 645.551
+Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1547.219 ; gain = 647.566
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1542.438 ; gain = 645.551
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1547.219 ; gain = 647.566
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1542.438 ; gain = 645.551
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1547.219 ; gain = 647.566
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1542.438 ; gain = 645.551
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1547.219 ; gain = 647.566
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1542.438 ; gain = 645.551
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1547.219 ; gain = 647.566
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1542.438 ; gain = 645.551
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1547.219 ; gain = 647.566
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -279,43 +304,43 @@ Report Cell Usage:
 |      |Cell       |Count |
 +------+-----------+------+
 |1     |BUFG       |     3|
-|2     |CARRY4     |    29|
+|2     |CARRY4     |    19|
 |3     |DSP48E1    |     2|
-|4     |LUT1       |    11|
-|5     |LUT2       |    81|
-|6     |LUT3       |    41|
-|7     |LUT4       |    53|
-|8     |LUT5       |    26|
-|9     |LUT6       |    49|
+|4     |LUT1       |    24|
+|5     |LUT2       |    56|
+|6     |LUT3       |    27|
+|7     |LUT4       |    22|
+|8     |LUT5       |    18|
+|9     |LUT6       |    28|
 |10    |MMCME2_ADV |     1|
 |11    |SRL16E     |     1|
-|12    |FDRE       |    97|
-|13    |FDSE       |     5|
-|14    |IBUF       |     3|
-|15    |OBUF       |    16|
+|12    |FDRE       |    84|
+|13    |IBUF       |     3|
+|14    |OBUF       |    16|
 +------+-----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1542.438 ; gain = 645.551
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1547.219 ; gain = 647.566
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 1542.438 ; gain = 548.730
-Synthesis Optimization Complete : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1542.438 ; gain = 645.551
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 1547.219 ; gain = 549.824
+Synthesis Optimization Complete : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1547.219 ; gain = 647.566
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1542.438 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 32 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1547.219 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 22 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1542.438 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1547.219 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 2db8b083
+Synth Design complete | Checksum: 8697c71
 INFO: [Common 17-83] Releasing license: Synthesis
-38 Infos, 6 Warnings, 0 Critical Warnings and 0 Errors encountered.
+44 Infos, 13 Warnings, 6 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 1542.438 ; gain = 1058.223
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1542.438 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1547.219 ; gain = 1055.777
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1547.219 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/mattr/OneDrive/Documents/Projects/Fall2023/CPE487/Lab6/Lab6.runs/synth_1/pong.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file pong_utilization_synth.rpt -pb pong_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Dec  5 11:50:41 2023...
+INFO: [Common 17-206] Exiting Vivado at Tue Dec  5 12:54:29 2023...

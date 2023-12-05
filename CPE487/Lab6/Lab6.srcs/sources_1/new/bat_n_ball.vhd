@@ -12,16 +12,17 @@ ENTITY bat_n_ball IS
         serve : IN STD_LOGIC; -- initiates serve
         red : OUT STD_LOGIC;
         green : OUT STD_LOGIC;
-        blue : OUT STD_LOGIC
+        blue : OUT STD_LOGIC;
+        SW_SPD : IN STD_LOGIC_VECTOR (10 DOWNTO 0)
     );
 END bat_n_ball;
 
 ARCHITECTURE Behavioral OF bat_n_ball IS
     CONSTANT bsize : INTEGER := 8; -- ball size in pixels
-    CONSTANT bat_w : INTEGER := 20; -- bat width in pixels
+    CONSTANT bat_w : INTEGER := 40; -- bat width in pixels (old = 20)
     CONSTANT bat_h : INTEGER := 3; -- bat height in pixels
     -- distance ball moves each frame
-    CONSTANT ball_speed : STD_LOGIC_VECTOR (10 DOWNTO 0) := CONV_STD_LOGIC_VECTOR (6, 11);
+    SIGNAL ball_speed : STD_LOGIC_VECTOR (10 DOWNTO 0) := CONV_STD_LOGIC_VECTOR (6, 11);
     SIGNAL ball_on : STD_LOGIC; -- indicates whether ball is at current pixel position
     SIGNAL bat_on : STD_LOGIC; -- indicates whether bat at over current pixel position
     SIGNAL game_on : STD_LOGIC := '0'; -- indicates whether ball is in play
@@ -33,6 +34,10 @@ ARCHITECTURE Behavioral OF bat_n_ball IS
     -- current ball motion - initialized to (+ ball_speed) pixels/frame in both X and Y directions
     SIGNAL ball_x_motion, ball_y_motion : STD_LOGIC_VECTOR(10 DOWNTO 0) := ball_speed;
 BEGIN
+
+    -- process to set ball speed based on switch position
+    ball_speed <= SW_SPD;
+
     red <= NOT bat_on; -- color setup for red ball and cyan bat on white background
     green <= NOT ball_on;
     blue <= NOT ball_on;
@@ -97,6 +102,9 @@ BEGIN
              (ball_y + bsize/2) >= (bat_y - bat_h) AND
              (ball_y - bsize/2) <= (bat_y + bat_h) THEN
                 ball_y_motion <= (NOT ball_speed) + 1; -- set vspeed to (- ball_speed) pixels
+
+                -- Decrease the width of the bat by 1 pixel
+                bat_w <= bat_w - 1;
         END IF;
         -- compute next ball vertical position
         -- variable temp adds one more bit to calculation to fix unsigned underflow problems

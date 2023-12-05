@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date         : Tue Dec  5 11:51:23 2023
+| Date         : Tue Dec  5 12:55:09 2023
 | Host         : DESKTOP-6DEOV28 running 64-bit major release  (build 9200)
 | Command      : report_clock_utilization -file pong_clock_utilization_routed.rpt
 | Design       : pong
@@ -76,9 +76,9 @@ Table of Contents
 +----------+-----------------+------------+-------------------+--------------+-------------+-----------------+--------------+-------+------------------------+---------------------------+
 | Local Id | Driver Type/Pin | Constraint | Site/BEL          | Clock Region | Clock Loads | Non-Clock Loads | Clock Period | Clock | Driver Pin             | Net                       |
 +----------+-----------------+------------+-------------------+--------------+-------------+-----------------+--------------+-------+------------------------+---------------------------+
-| 0        | FDRE/Q          | None       | SLICE_X4Y113/DFF  | X0Y2         |          25 |               0 |              |       | vga_driver/vsync_reg/Q | vga_driver/VGA_vsync_OBUF |
-| 1        | FDRE/Q          | None       | SLICE_X0Y119/B5FF | X0Y2         |          11 |               4 |              |       | count_reg[4]/Q         | count_reg[4]              |
-| 2        | FDRE/Q          | None       | SLICE_X1Y119/B5FF | X0Y2         |           9 |               3 |              |       | count_reg[9]/Q         | ADC_CS_OBUF               |
+| 0        | FDRE/Q          | None       | SLICE_X4Y108/B5FF | X0Y2         |          11 |               4 |              |       | count_reg[4]/Q         | count_reg[4]              |
+| 1        | FDRE/Q          | None       | SLICE_X4Y109/B5FF | X0Y2         |           9 |               3 |              |       | count_reg[9]/Q         | ADC_CS_OBUF               |
+| 2        | FDRE/Q          | None       | SLICE_X13Y105/AFF | X0Y2         |           7 |               0 |              |       | vga_driver/vsync_reg/Q | vga_driver/VGA_vsync_OBUF |
 +----------+-----------------+------------+-------------------+--------------+-------------+-----------------+--------------+-------+------------------------+---------------------------+
 * Local Clocks in this context represents only clocks driven by non-global buffers
 ** Clock Loads column represents cell count of net connects that connect to a clock pin. Internal cell leaf pins are not considered
@@ -97,7 +97,7 @@ Table of Contents
 | X1Y0              |    0 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     4 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |  1500 |    0 |   550 |    0 |    40 |    0 |    20 |    0 |    40 |
 | X0Y1              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  2000 |    0 |   600 |    0 |    20 |    0 |    10 |    0 |    20 |
 | X1Y1              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  1900 |    0 |   650 |    0 |    60 |    0 |    30 |    0 |    40 |
-| X0Y2              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |  104 |  2000 |   27 |   600 |    0 |    20 |    0 |    10 |    0 |    20 |
+| X0Y2              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |   86 |  2000 |   34 |   600 |    0 |    20 |    0 |    10 |    0 |    20 |
 | X1Y2              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  1900 |    0 |   650 |    0 |    60 |    0 |    30 |    0 |    40 |
 | X0Y3              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  2600 |    0 |   600 |    0 |    20 |    0 |    10 |    0 |    20 |
 | X1Y3              |    0 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     4 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |  1350 |    0 |   500 |    0 |    30 |    0 |    15 |    0 |    40 |

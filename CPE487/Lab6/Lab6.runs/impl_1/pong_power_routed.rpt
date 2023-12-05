@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date             : Tue Dec  5 11:51:23 2023
+| Date             : Tue Dec  5 12:55:08 2023
 | Host             : DESKTOP-6DEOV28 running 64-bit major release  (build 9200)
 | Command          : report_power -file pong_power_routed.rpt -pb pong_power_summary_routed.pb -rpx pong_power_routed.rpx
 | Design           : pong
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.225        |
+| Total On-Chip Power (W)  | 0.224        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.128        |
+| Dynamic (W)              | 0.126        |
 | Device Static (W)        | 0.097        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 84.0         |
@@ -53,18 +53,18 @@ Table of Contents
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |     0.002 |        5 |       --- |             --- |
-| Slice Logic             |     0.001 |      407 |       --- |             --- |
-|   LUT as Logic          |     0.001 |      181 |     63400 |            0.29 |
-|   CARRY4                |    <0.001 |       29 |     15850 |            0.18 |
-|   Register              |    <0.001 |      104 |    126800 |            0.08 |
+| Slice Logic             |    <0.001 |      290 |       --- |             --- |
+|   LUT as Logic          |    <0.001 |      119 |     63400 |            0.19 |
+|   Register              |    <0.001 |       86 |    126800 |            0.07 |
+|   CARRY4                |    <0.001 |       19 |     15850 |            0.12 |
 |   LUT as Shift Register |    <0.001 |        1 |     19000 |           <0.01 |
 |   Others                |     0.000 |       12 |       --- |             --- |
-| Signals                 |    <0.001 |      307 |       --- |             --- |
+| Signals                 |    <0.001 |      242 |       --- |             --- |
 | MMCM                    |     0.123 |        1 |         6 |           16.67 |
 | DSPs                    |    <0.001 |        2 |       240 |            0.83 |
 | I/O                     |    <0.001 |       19 |       210 |            9.05 |
 | Static Power            |     0.097 |          |           |                 |
-| Total                   |     0.225 |          |           |                 |
+| Total                   |     0.224 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,7 +74,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.020 |       0.005 |      0.015 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.019 |       0.003 |      0.015 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.086 |       0.068 |      0.018 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.004 |       0.000 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -145,8 +145,7 @@ Table of Contents
 +------------------+-----------+
 | Name             | Power (W) |
 +------------------+-----------+
-| pong             |     0.128 |
-|   add_bb         |     0.002 |
+| pong             |     0.126 |
 |   clk_wiz_0_inst |     0.124 |
 |     U0           |     0.124 |
 +------------------+-----------+

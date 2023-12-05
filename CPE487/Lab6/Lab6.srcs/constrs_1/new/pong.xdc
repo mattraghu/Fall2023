@@ -23,3 +23,12 @@ set_property -dict { PACKAGE_PIN G17 IOSTANDARD LVCMOS33 } [get_ports { ADC_SCLK
 set_property -dict { PACKAGE_PIN C17 IOSTANDARD LVCMOS33 } [get_ports { ADC_CS }]; #IO_L20N_T3_A19_15 Sch=ja[1]
 
 set_property -dict { PACKAGE_PIN N17 IOSTANDARD LVCMOS33 } [get_ports { btn0 }]; #IO_L9P_T1_DQS_14 Sch=btnc
+
+
+# Ball Speed Switches
+set_property -dict {PACKAGE_PIN J15 IOSTANDARD LVCMOS33} [get_ports {SW_SPD[0]}]
+set_property -dict {PACKAGE_PIN L16 IOSTANDARD LVCMOS33} [get_ports {SW_SPD[1]}]
+set_property -dict {PACKAGE_PIN M13 IOSTANDARD LVCMOS33} [get_ports {SW_SPD[2]}]
+set_property -dict {PACKAGE_PIN R15 IOSTANDARD LVCMOS33} [get_ports {SW_SPD[3]}]
+set_property -dict {PACKAGE_PIN R17 IOSTANDARD LVCMOS33} [get_ports {SW_SPD[4]}]
+set_property -dict {PACKAGE_PIN T18 IOSTANDARD LVCMOS33} [get_ports {SW_SPD[5]}]
