@@ -13,7 +13,7 @@ ENTITY bat_n_ball IS
         red : OUT STD_LOGIC;
         green : OUT STD_LOGIC;
         blue : OUT STD_LOGIC;
-        SW_SPD : IN STD_LOGIC_VECTOR (10 DOWNTO 0)
+        SW_SPD : IN STD_LOGIC_VECTOR (10 DOWNTO 0);
         hits : OUT STD_LOGIC_VECTOR (15 DOWNTO 0) -- number of times ball hits bat
     );
 END bat_n_ball;
@@ -34,10 +34,15 @@ ARCHITECTURE Behavioral OF bat_n_ball IS
     CONSTANT bat_y : STD_LOGIC_VECTOR(10 DOWNTO 0) := CONV_STD_LOGIC_VECTOR(500, 11);
     -- current ball motion - initialized to (+ ball_speed) pixels/frame in both X and Y directions
     SIGNAL ball_x_motion, ball_y_motion : STD_LOGIC_VECTOR(10 DOWNTO 0) := ball_speed;
+
+    SIGNAL hits_buffer : STD_LOGIC_VECTOR (15 DOWNTO 0) := (OTHERS => '0');
 BEGIN
 
     -- process to set ball speed based on switch position
     ball_speed <= SW_SPD;
+    
+    -- output the number of hits
+    hits <= hits_buffer;
 
     red <= NOT bat_on; -- color setup for red ball and cyan bat on white background
     green <= NOT ball_on;
@@ -108,7 +113,7 @@ BEGIN
                 bat_w <= bat_w - 1;
 
                 -- Increase the number of hits by 1
-                hits <= hits + 1;
+                hits_buffer <= hits_buffer + 1;
         END IF;
         -- compute next ball vertical position
         -- variable temp adds one more bit to calculation to fix unsigned underflow problems
