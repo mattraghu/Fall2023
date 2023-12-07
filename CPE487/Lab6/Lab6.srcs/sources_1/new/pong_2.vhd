@@ -14,7 +14,7 @@ ENTITY pong IS
         btnl : IN STD_LOGIC;
         btnr : IN STD_LOGIC;
         btn0 : IN STD_LOGIC;
-        SW_SPD : IN STD_LOGIC_VECTOR (10 DOWNTO 0);
+        SW_SPD : IN STD_LOGIC_VECTOR (5 DOWNTO 0);
         -- SW : IN STD_LOGIC_VECTOR (4 DOWNTO 0);
         SEG7_anode : OUT STD_LOGIC_VECTOR (7 DOWNTO 0); -- anodes of four 7-seg displays
         SEG7_seg : OUT STD_LOGIC_VECTOR (6 DOWNTO 0)
@@ -40,7 +40,7 @@ ARCHITECTURE Behavioral OF pong IS
             bat_x : IN STD_LOGIC_VECTOR (10 DOWNTO 0);
             serve : IN STD_LOGIC;
             -- SW : IN STD_LOGIC_VECTOR (4 DOWNTO 0);
-            SW_SPD : IN STD_LOGIC_VECTOR (10 DOWNTO 0);
+            SW_SPD : IN STD_LOGIC_VECTOR (5 DOWNTO 0);
             red : OUT STD_LOGIC;
             green : OUT STD_LOGIC;
             blue : OUT STD_LOGIC;

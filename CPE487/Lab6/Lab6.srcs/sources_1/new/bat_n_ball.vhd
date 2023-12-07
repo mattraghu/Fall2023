@@ -13,7 +13,7 @@ ENTITY bat_n_ball IS
         red : OUT STD_LOGIC;
         green : OUT STD_LOGIC;
         blue : OUT STD_LOGIC;
-        SW_SPD : IN STD_LOGIC_VECTOR (10 DOWNTO 0);
+        SW_SPD : IN STD_LOGIC_VECTOR (5 DOWNTO 0);
         hits : OUT STD_LOGIC_VECTOR (15 DOWNTO 0) -- number of times ball hits bat
     );
 END bat_n_ball;
@@ -39,7 +39,8 @@ ARCHITECTURE Behavioral OF bat_n_ball IS
 BEGIN
 
     -- process to set ball speed based on switch position
-    ball_speed <= SW_SPD;
+    -- But ensure its never 0
+    ball_speed(5 DOWNTO 0) <= SW_SPD WHEN SW_SPD /= "000000" ELSE "000001";
     
     -- output the number of hits
     hits <= hits_buffer;
