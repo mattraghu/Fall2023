@@ -14,12 +14,13 @@ ENTITY bat_n_ball IS
         green : OUT STD_LOGIC;
         blue : OUT STD_LOGIC;
         SW_SPD : IN STD_LOGIC_VECTOR (10 DOWNTO 0)
+        hits : OUT STD_LOGIC_VECTOR (15 DOWNTO 0) -- number of times ball hits bat
     );
 END bat_n_ball;
 
 ARCHITECTURE Behavioral OF bat_n_ball IS
     CONSTANT bsize : INTEGER := 8; -- ball size in pixels
-    CONSTANT bat_w : INTEGER := 40; -- bat width in pixels (old = 20)
+    SIGNAL bat_w : INTEGER := 20; -- bat width in pixels (old = 20)
     CONSTANT bat_h : INTEGER := 3; -- bat height in pixels
     -- distance ball moves each frame
     SIGNAL ball_speed : STD_LOGIC_VECTOR (10 DOWNTO 0) := CONV_STD_LOGIC_VECTOR (6, 11);
@@ -105,6 +106,9 @@ BEGIN
 
                 -- Decrease the width of the bat by 1 pixel
                 bat_w <= bat_w - 1;
+
+                -- Increase the number of hits by 1
+                hits <= hits + 1;
         END IF;
         -- compute next ball vertical position
         -- variable temp adds one more bit to calculation to fix unsigned underflow problems
