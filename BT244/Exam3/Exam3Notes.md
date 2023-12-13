@@ -268,3 +268,30 @@ They start from where the play that the player is making and goes to the better 
 if theere are multiple arrows (both horizontal and vertical) going to the same box then that is **Nash Equilibrium**. This is the best outcome for both players.
 
 (A*, B*) is the Nash Equilibrium. Meaning that if Player 1 plays A* and Player 2 plays B* then they will both get the best outcome.
+
+**Maximin Strategy** - A strategy that elevates the minimum gain that can be earned (so that the player is not worse off)
+
+### Prisoner's Dilemma
+
+This is a game where the players are unable to cooperate and end up worse off.
+
+**Cartel** - A group of firms acting in unison
+
+**Collusion** - An agreement among firms in a market about quantities to produce or prices to charge
+
+## Herfindahl-Hirschman Index (HHI)
+
+This is a measure of market concentration. It is calculated by squaring the market share of each firm competing in a market and then summing the resulting numbers.
+
+$$
+HHI = \sum_{i=1}^{n} s_{i}^2
+$$
+
+Where:
+
+- $s_{i}$ is the market share of firm $i$ (in %)
+
+## Some other stuff
+
+- ** Accounting Profit ** : Takes into account only explicit costs (Ex: rent, wages, etc.)
+- ** Economic Profit ** : Takes into account both explicit and implicit costs (Ex: opportunity cost)
